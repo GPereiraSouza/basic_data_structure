@@ -1,6 +1,4 @@
 #include "matrix.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 int predefinedMatrix[5][5] = {
     {7, 53, 183, 439, 863},

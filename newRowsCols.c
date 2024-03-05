@@ -1,6 +1,5 @@
 #include "matrix.h"
-#include <stdio.h>
-#include <stdlib.h>
+
 
 Matrix *addRows(Matrix *matrix, int numRowsToAdd) {
     int newRows = matrix->rows + numRowsToAdd;
