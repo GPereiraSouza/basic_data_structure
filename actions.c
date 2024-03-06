@@ -1,76 +1,107 @@
 #include "matrix.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int actions(Matrix *matrix){
-    int caso;
-    int row, col, ele, ad;
-
-
-    printf("\n|Precione 1 para alterar um elemento especifico na Matriz|\n|Precione 2 para adicionar linhas ou colunas|\n |Precione 3 para remover linhas ou colunas|\n ");
-    scanf("%d", &caso);
+int actions(Matrix *matrix) {
+    int choice, option, row, col, val, numRowsToAdd, numColsToAdd, numRowsToRemove, numColsToRemove;
     
+    // Exibir as opções para o usuário
+    printf("\nEscolha uma opcao:\n");
 
-    switch (caso){
+    printf("1. Alterar um elemento especifico na matriz\n");
+    printf("2. Adicionar linhas ou colunas\n");
+    printf("3. Remover linhas ou colunas\n");
+
+    printf("Opcao: ");
+    scanf("%d", &choice);
+    
+    switch (choice) {
         case 1:
-
-            printf("Infome: Linha | Coluna | Valor - ");
+            // Alterar um elemento específico na matriz
+            printf("\nInforme a linha, coluna e o novo valor:\n");
+            
+            printf("Linha: ");
             scanf("%d", &row);
 
-            printf(" | ");
+            printf("Coluna: ");
             scanf("%d", &col);
 
-            printf(" | ");
-            scanf("%d", &ele);
+            printf("Novo valor: ");
+            scanf("%d", &val);
 
-            setMatrixElement(matrix, row, row, ele);
-            showMatrix(matrix);
-            destroyMatrix(matrix);
-        break;
+            setMatrixElement(matrix, row, col, val);
+            break;
+        
         case 2:
-            printf("Digite [1] se pretende adicionar Linhas | Digite [2] se pretende adicionar Colunas: ");
-            scanf("%d", &ad);
+            // Adicionar linhas ou colunas
+            printf("\nEscolha o que deseja adicionar:\n");
+            
+            printf("1. Adicionar linhas\n");
+            printf("2. Adicionar colunas\n");
 
-            if(ad == 1){
+            printf("Opcao: ");
+            scanf("%d", &option);
+
+            if (option == 1) {
+
                 printf("Quantas linhas deseja adicionar: ");
-                scanf("%d", &row);
+                scanf("%d", &numRowsToAdd);
 
-                addRows(matrix, row);
-                showMatrix(matrix);
-                destroyMatrix(matrix);
-            } else{
+                addRows(matrix, numRowsToAdd);
+
+            } else if (option == 2) {
+                int numColsToAdd;
+
                 printf("Quantas colunas deseja adicionar: ");
-                scanf("%d", &col);
+                scanf("%d", &numColsToAdd);
 
-                addCols(matrix, col);
-                showMatrix(matrix);
-                destroyMatrix(matrix);
+                addCols(matrix, numColsToAdd);
+
+            } else {
+                printf("Opcao invalida!\n");
             }
-        break;
+            break;
+        
         case 3:
-            printf("Digite [1] se pretende remover Linhas | Digite [2] se pretende remover Colunas: ");
-            scanf("%d", &ad);
+            // Remover linhas ou colunas
+            printf("\nEscolha o que deseja remover:\n");
 
-            if(ad == 1){
+            printf("1. Remover linhas\n");
+            printf("2. Remover colunas\n");
+
+            printf("Opcao: ");            
+            scanf("%d", &option);
+
+            if (option == 1) {
+
                 printf("Quantas linhas deseja remover: ");
-                scanf("%d", &row);
+                scanf("%d", &numRowsToRemove);
 
-                deleteRows(matrix, row);
-                showMatrix(matrix);
-                destroyMatrix(matrix);
-            }else{
+                deleteRows(matrix, numRowsToRemove);
+
+            } else if (option == 2) {
+                int numColsToRemove;
+
                 printf("Quantas colunas deseja remover: ");
-                scanf("%d", &col);
+                scanf("%d", &numColsToRemove);
 
-                deleteCols(matrix, col);
-                showMatrix(matrix);
-                destroyMatrix(matrix);
+                deleteCols(matrix, numColsToRemove);
+
+            } else {
+                printf("Opcao invalida!\n");
             }
-        break;
-    
+            break;
+        case 4:
+            
+            break;
+        
         default:
-        break;
+            printf("Opcao invalida!\n");
+            break;
     }
-
-    return caso;
+    
+    // Exibir a matriz após as alterações
+    printf("\nMatriz atualizada:\n");
+    showMatrix(matrix);
+    
+    // Retorna a escolha do usuário
+    return choice;
 }
