@@ -15,8 +15,6 @@ int main() {
     showMatrix(matrix);
 
     actions(matrix);
-
-    destroyMatrix(matrix);
     
     return 0;
 }

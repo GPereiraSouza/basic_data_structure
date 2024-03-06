@@ -1,6 +1,6 @@
 #include "matrix.h"
 
-
+//Função que adiciona quatas linhas desejadas na matriz predefinida e adiciona 0 em seus dados
 Matrix *addRows(Matrix *matrix, int numRowsToAdd) {
     int newRows = matrix->rows + numRowsToAdd;
     int cols = matrix->cols;
@@ -56,6 +56,7 @@ Matrix *addRows(Matrix *matrix, int numRowsToAdd) {
     return matrix;
 }
 
+//Função que adiciona quatas colunas desejadas na matriz predefinida e adiciona 0 em seus dados
 Matrix *addCols(Matrix *matrix, int numColsToAdd) {
     int rows = matrix->rows;
     int newCols = matrix->cols + numColsToAdd;

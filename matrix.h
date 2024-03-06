@@ -22,16 +22,16 @@ void showMatrix(Matrix *matrix);
 
 void destroyMatrix(Matrix *matrix);
 
+void setMatrixElement(Matrix *matrix, int row, int col, int value);
+
 Matrix *addRows(Matrix *matrix, int numRowsToAdd);
 
-Matrix *addCols(Matrix *matrix, int numRowsToAdd);
+Matrix *addCols(Matrix *matrix, int numColsToAdd);
 
-Matrix *removeRowsCols(Matrix *matrix);
+Matrix *deleteRows(Matrix *matrix, int rowstoDelete);
 
-Matrix *printMatrix(Matrix *matrix);
+Matrix *deleteCols(Matrix *matrix, int colstoDelete);
 
 Matrix *calcRowsCols(Matrix *matrix, int *totalSum);
-
-void setMatrixElement(Matrix *matrix, int row, int col, int value);
 
 #endif
