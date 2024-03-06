@@ -1,7 +1,7 @@
 #include "matrix.h"
 
 int actions(Matrix *matrix) {
-    int choice, option, row, col, val, numRowsToAdd, numColsToAdd, numRowsToRemove, numColsToRemove;
+    int choice, option, row, col, val, numRowsToAdd, numColsToAdd, numRowsToRemove, numColsToRemove, totalSum;
     
     // Exibir as opções para o usuário
     printf("\nEscolha uma opcao:\n");
@@ -9,6 +9,7 @@ int actions(Matrix *matrix) {
     printf("1. Alterar um elemento especifico na matriz\n");
     printf("2. Adicionar linhas ou colunas\n");
     printf("3. Remover linhas ou colunas\n");
+    printf("4. Calcular a soma maxima Rows|Cols\n");
 
     printf("Opcao: ");
     scanf("%d", &choice);
@@ -90,9 +91,13 @@ int actions(Matrix *matrix) {
             }
             break;
         case 4:
-            
-            break;
-        
+            //Calcular a soma maxima Linhas | Colunas
+            totalSum = calcMax(matrix, matrix->rows, matrix->cols, &totalSum);
+
+
+            printf("\nA soma maxima possivel dos inteiros na matriz que nao compartilham linhas ou colunas eh: |%d|\n", totalSum);
+        break;
+
         default:
             printf("Opcao invalida!\n");
             break;
