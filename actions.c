@@ -7,7 +7,7 @@ int actions(Matrix *matrix){
     int row, col, ele, ad;
 
 
-    printf("\nPrecione 1 para alterar um elemento especifico na Matriz;\nPrecione 2 para alterar o numero de linhas ou de coluas;\n  ");
+    printf("\n|Precione 1 para alterar um elemento especifico na Matriz|\n|Precione 2 para alterar o numero de linhas ou de coluas|\n|Precione 3 para  ");
     scanf("%d", &caso);
     
 
@@ -37,7 +37,7 @@ int actions(Matrix *matrix){
                 addRows(matrix, row);
                 showMatrix(matrix);
             } else{
-                printf("Quantas colunas deseja adicionasr: ");
+                printf("Quantas colunas deseja adicionar: ");
                 scanf("%d", &col);
 
                 addCols(matrix, col);

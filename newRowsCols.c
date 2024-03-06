@@ -29,6 +29,20 @@ Matrix *addRows(Matrix *matrix, int numRowsToAdd) {
         }
     }
 
+    // Inicializa as novas linhas adicionadas com zeros
+    for (int i = matrix->rows; i < newRows; i++) {
+        newData[i] = (int *)calloc(cols, sizeof(int));
+        if (newData[i] == NULL) {
+            printf("Erro ao alocar memória para a nova matriz.\n");
+            // Libera a memória alocada anteriormente
+            for (int j = 0; j < i; j++) {
+                free(newData[j]);
+            }
+            free(newData);
+            return NULL;
+        }
+    }
+
     // Libera a memória alocada para a matriz original
     for (int i = 0; i < matrix->rows; i++) {
         free(matrix->data[i]);
@@ -48,6 +62,7 @@ Matrix *addCols(Matrix *matrix, int numColsToAdd) {
 
     // Aloca memória para cada linha da matriz expandida
     for (int i = 0; i < rows; i++) {
+        // Realoca a linha atual para acomodar as novas colunas
         int *newRow = (int *)realloc(matrix->data[i], newCols * sizeof(int));
         if (newRow == NULL) {
             printf("Erro ao alocar memória para a nova matriz.\n");
