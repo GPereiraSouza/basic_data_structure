@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "../matrix.h"
 
 void loadPredefinedMatrix(Matrix *matrix) {
     // Verifica se a estrutura da matriz e a matriz com os dados dados são válidas

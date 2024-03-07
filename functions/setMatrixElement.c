@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "../matrix.h"
 
 // Função para alterar um elemento específico na matriz
 void setMatrixElement(Matrix *matrix, int row, int col, int value) {

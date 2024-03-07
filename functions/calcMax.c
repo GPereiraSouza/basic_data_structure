@@ -1,4 +1,5 @@
-#include "matrix.h"
+#include "../matrix.h"
+
 
 int calcMax(Matrix *matrix, int rows, int cols, int *totalSum) {
     int maxSumWithoutSharing = 0;

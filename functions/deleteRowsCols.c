@@ -1,4 +1,5 @@
-#include "matrix.h"
+#include "../matrix.h"
+
 
 //Função que deleta a linha desejada da matriz predefinida
 Matrix *deleteRows(Matrix *matrix, int rowstoDelete){

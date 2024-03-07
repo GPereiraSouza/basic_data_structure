@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "../matrix.h"
 
 int actions(Matrix *matrix) {
     int choice, option, row, col, val, numRowsToAdd, numColsToAdd, numRowsToRemove, numColsToRemove, totalSum;

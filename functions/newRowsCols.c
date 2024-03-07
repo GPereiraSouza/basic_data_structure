@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "../matrix.h"
 
 //Função que adiciona quatas linhas desejadas na matriz predefinida e adiciona 0 em seus dados
 Matrix *addRows(Matrix *matrix, int numRowsToAdd) {
