@@ -34,4 +34,6 @@ Matrix *deleteCols(Matrix *matrix, int colstoDelete);
 
 int calcMax(Matrix *matrix, int rows, int cols, int *totalSum);
 
+int start();
+
 #endif

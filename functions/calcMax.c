@@ -1,6 +1,6 @@
 #include "../matrix.h"
 
-
+//Função que calcula a soma dos maiores valores sem repetir linhas ou colunas
 int calcMax(Matrix *matrix, int rows, int cols, int *totalSum) {
     int maxSumWithoutSharing = 0;
 
