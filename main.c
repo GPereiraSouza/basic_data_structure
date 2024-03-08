@@ -1,7 +1,6 @@
 #include "matrix.h"
-#include <stdio.h>
-#include <stdlib.h>
 
+//Main onde apenas se encontra o start, que é a função onde inicializa o codigo
 int main() {  
     start();
     

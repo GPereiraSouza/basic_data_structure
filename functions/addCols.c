@@ -2,16 +2,17 @@
 
 //Função que adiciona quatas colunas desejadas na matriz predefinida e adiciona 0 em seus dados
 Matrix *addCols(Matrix *matrix, int numColsToAdd) {
+    //Variavel criada para receber a matriz ja existente + a quantidade de colunas que quer adicionar
     int rows = matrix->rows;
     int newCols = matrix->cols + numColsToAdd;
 
-    // Aloca memória para cada linha da matriz expandida
+    // Aloca memoria para cada linha da matriz expandida
     for (int i = 0; i < rows; i++) {
         // Realoca a linha atual para acomodar as novas colunas
         int *newRow = (int *)realloc(matrix->data[i], newCols * sizeof(int));
         if (newRow == NULL) {
-            printf("Erro ao alocar memória para a nova matriz.\n");
-            // Libera a memória alocada anteriormente
+            printf("Erro ao alocar memoria para a nova matriz.\n");
+            // Libera a memoria alocada anteriormente
             for (int j = 0; j < i; j++) {
                 free(matrix->data[j]);
             }
