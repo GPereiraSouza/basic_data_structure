@@ -2,7 +2,7 @@
 
 //Função criada para alocar memoria para a estrutura da matrix e para os dados da matrix
 Matrix *createMatrix(int rows, int cols) {
-    // Aloca memória para a estrutura Matrix
+    // Aloca memoria para a estrutura Matrix
     Matrix *matrix = (Matrix*)malloc(sizeof(Matrix));
 
     //Verifica se a alocação de memoria para a estrutura teve sucesso

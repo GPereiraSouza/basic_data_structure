@@ -6,18 +6,23 @@ Matrix *deleteRows(Matrix *matrix, int rowsToDelete) {
     int rows = matrix->rows - rowsToDelete;
     int cols = matrix->cols;
 
-    // Realoca memoria para a nova matriz reduzida
-    int **newData = (int **)realloc(matrix->data, rows * sizeof(int *));
-
-    //Se a realocaçao der erro ira aparecer esse erro
-    if (newData == NULL) {
-        printf("Erro ao realocar memoria para a nova matriz.\n");
+    if (rows == 0) {
+        // Se todas as linhas forem removidas, defina a matriz como nula
+        matrix->data = NULL;
+        printf("\n |MATRIZ == NULL| \n");
         return NULL;
+    } else {
+        // Realoca memoria para a nova matriz reduzida
+        int **newData = (int **)realloc(matrix->data, rows * sizeof(int *));
+        // Se a realocação der erro, retorne NULL
+        if (newData == NULL) {
+            printf("Erro ao realocar memoria para a nova matriz.\n");
+            return NULL;
+        }
+        // Atualiza o numero de linhas na matriz
+        matrix->rows = rows;
+        matrix->data = newData;
     }
-
-    // Atualiza o numero de linhas na matriz
-    matrix->rows = rows;
-    matrix->data = newData;
 
     return matrix;
 }
