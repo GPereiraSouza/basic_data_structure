@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 typedef struct Matrix{
     int rows;
@@ -32,7 +33,7 @@ Matrix *deleteRows(Matrix *matrix, int rowstoDelete);
 
 Matrix *deleteCols(Matrix *matrix, int colstoDelete);
 
-int calcMax(Matrix *matrix, int rows, int cols, int *totalSum);
+int calcMax(Matrix *matrix, int rows, int cols);
 
 int start();
 

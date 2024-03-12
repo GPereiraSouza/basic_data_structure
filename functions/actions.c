@@ -117,14 +117,15 @@ int actions(Matrix *matrix) {
             }
             break;
         case 4:
-            //Calcula a soma maxima Linhas | Colunas
+            //Calcula a soma maxima Linhas || Colunas
 
             //Variavel que recebe a função que faz o calculo maximo
             //Esta função recebe a matrix predefinida, as linhas e as colunas e o endereço para o total somado
-            totalSum = calcMax(matrix, matrix->rows, matrix->cols, &totalSum);
 
+            //int totalSum;
+            totalSum = calcMax(matrix, matrix->rows, matrix->cols);
 
-            printf("\nA soma maxima possivel dos inteiros na matriz que nao compartilham linhas ou colunas eh: |%d|\n", totalSum);
+            printf("\nA soma maxima possivel dos inteiros na matriz que nao compartilham Linhas || Colunas eh: |%d|\n", totalSum);
         break;
 
         //Se o usuario nao selecionar uma opcao valida ira cair no default
